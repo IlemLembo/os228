@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useTheme } from "../contexts/ThemeContext";
 
 export default function Navbar() {
@@ -10,7 +11,13 @@ export default function Navbar() {
       <div className=" max-w-6xl backdrop-blur border border-border md:rounded-2xl px-4 mx-auto flex h-16 items-center justify-between">
         {/* Logo et nom */}
         <div className="flex items-center">
-          <img src="tg.png" alt="" className=" h-6 mr-2" />
+          <Image
+            src="/tg.png"
+            alt="Drapeau du Togo"
+            width={24}
+            height={24}
+            className="h-6 mr-2"
+          />
           <h1 className="text-xl font-bold text-foreground">OS228</h1>
         </div>
 

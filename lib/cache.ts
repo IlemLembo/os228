@@ -5,7 +5,7 @@ interface CacheItem<T> {
 }
 
 class Cache {
-    private cache = new Map<string, CacheItem<any>>();
+    private cache = new Map<string, CacheItem<unknown>>();
 
     set<T>(key: string, data: T, ttl: number = 5 * 60 * 1000): void {
         this.cache.set(key, {
@@ -16,7 +16,7 @@ class Cache {
     }
 
     get<T>(key: string): T | null {
-        const item = this.cache.get(key);
+        const item = this.cache.get(key) as CacheItem<T> | undefined;
         if (!item) return null;
 
         const now = Date.now();
