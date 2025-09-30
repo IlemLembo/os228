@@ -8,7 +8,6 @@ export interface Project {
     technologies: string[];
     category: string;
     author: string;
-    stars: number;
     language: string;
 }
 
