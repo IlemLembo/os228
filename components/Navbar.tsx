@@ -6,8 +6,8 @@ export default function Navbar() {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <nav className="sticky top-4 z-50 w-full ">
-      <div className=" max-w-6xl backdrop-blur border border-border rounded-2xl px-4 mx-auto flex h-16 items-center justify-between">
+    <nav className="sticky md:top-4 top-0 z-50 w-full ">
+      <div className=" max-w-6xl backdrop-blur border border-border md:rounded-2xl px-4 mx-auto flex h-16 items-center justify-between">
         {/* Logo et nom */}
         <div className="flex items-center">
           <img src="tg.png" alt="" className=" h-6 mr-2" />

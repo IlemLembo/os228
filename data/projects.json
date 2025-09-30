@@ -1,5 +1,20 @@
 [
     {
+        "id": 2,
+        "name": "Beautiful Dialogs",
+        "description": "Beautiful Dialogs is a Flutter open-source project where developers can contribute by adding beautiful dialog widgets!",
+        "link": "https://github.com/Docteur-Parfait/beautiful_dialog",
+        "technologies": [
+            "Flutter",
+            "Dart",
+            "Open Source"
+        ],
+        "category": "Open Source",
+        "author": "Docteur-Parfait",
+        "stars": 24,
+        "language": "Dart"
+    },
+    {
         "id": 1,
         "name": "OS228 Platform",
         "description": "Plateforme de regroupement des projets open source du Togo pour le Hacktoberfest 2025",

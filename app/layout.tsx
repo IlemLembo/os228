@@ -26,6 +26,21 @@ export const metadata: Metadata = {
       "Plateforme des projets open source du Togo pour le Hacktoberfest 2025",
     type: "website",
     url: "https://github.com/Docteur-Parfait/os228",
+    images: [
+      {
+        url: "/seo.png",
+        width: 1200,
+        height: 630,
+        alt: "OS228 - OpenSource 228 | Projets Open Source du Togo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "OS228 - OpenSource 228",
+    description:
+      "Plateforme des projets open source du Togo pour le Hacktoberfest 2025",
+    images: ["/seo.png"],
   },
 };
 
