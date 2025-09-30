@@ -58,7 +58,7 @@ export default function ProjectFilters({
             >
               <option value="id">Plus récent</option>
               <option value="name">Nom (A-Z)</option>
-              <option value="stars">Étoiles (plus populaire)</option>
+              <option value="stars">Popularité</option>
             </select>
           </div>
 

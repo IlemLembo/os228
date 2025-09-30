@@ -106,7 +106,6 @@ Pour ajouter votre projet à la liste :
   "technologies": ["React", "Node.js", "MongoDB"],
   "category": "Web Development",
   "author": "Votre nom d'utilisateur",
-  "stars": 0,
   "language": "TypeScript"
 }
 ```

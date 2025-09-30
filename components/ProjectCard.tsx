@@ -1,19 +1,49 @@
 import { Project } from "../data/projects";
+import { useGitHubStats } from "../hooks/useGitHubStats";
 
 interface ProjectCardProps {
   project: Project;
 }
 
 export default function ProjectCard({ project }: ProjectCardProps) {
+  const { stats, loading } = useGitHubStats(project.link);
+
   return (
     <div className="bg-card rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-border">
       <div className="flex justify-between items-start mb-4">
         <h3 className="text-xl font-bold text-card-foreground mb-2">
           {project.name}
         </h3>
-        <div className="flex items-center text-muted-foreground text-sm">
-          <span className="mr-1">⭐</span>
-          {project.stars}
+        <div className="flex items-center gap-3 text-muted-foreground text-sm">
+          {loading ? (
+            <div className="flex items-center gap-2">
+              <div className="w-4 h-4 border-2 border-primary border-t-transparent rounded-full animate-spin"></div>
+              <span>Chargement...</span>
+            </div>
+          ) : stats ? (
+            <>
+              <div className="flex items-center gap-1">
+                <span>⭐</span>
+                <span className="font-medium">{stats.stars}</span>
+              </div>
+              <div className="flex items-center gap-1">
+                {/* Icône fork GitHub (revu) */}
+                <svg
+                  className="w-4 h-4"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path d="M6 3a3 3 0 1 0 2.83 4H9v4.18A3.001 3.001 0 0 0 11 14.83V17a3 3 0 1 0 2 0v-2.17A3.001 3.001 0 0 0 15 11.18V7.83A3.001 3.001 0 1 0 13 3v4.18A3.001 3.001 0 0 0 9 7.83V7a3 3 0 0 0-3-3zm0 2a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm12 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm-6 12a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                </svg>
+                <span className="font-medium">{stats.forks}</span>
+              </div>
+            </>
+          ) : (
+            <div className="flex items-center gap-1 text-muted-foreground">
+              <span className="text-xs">Stats non disponibles</span>
+            </div>
+          )}
         </div>
       </div>
 

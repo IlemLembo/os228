@@ -34,7 +34,8 @@ export default function Home() {
         case "name":
           return a.name.localeCompare(b.name, "fr");
         case "stars":
-          return b.stars - a.stars;
+          // Tri par popularité (ID décroissant comme proxy)
+          return b.id - a.id;
         case "id":
         default:
           return b.id - a.id;
