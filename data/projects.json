@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "name": "OS228 Platform",
+        "description": "Plateforme de regroupement des projets open source du Togo pour le Hacktoberfest 2025",
+        "link": "https://github.com/Docteur-Parfait/os228",
+        "technologies": [
+            "Next.js",
+            "TypeScript",
+            "Tailwind CSS"
+        ],
+        "category": "Web Development",
+        "author": "Docteur-Parfait",
+        "stars": 1,
+        "language": "TypeScript"
+    },
+    {
+        "id": 2,
+        "name": "PytDm",
+        "description": "Un gestionnaire de téléchargement moderne et intuitif basé sur Python",
+        "link": "https://github.com/Docteur-Parfait/PytDm",
+        "technologies": [
+            "Python",
+            "Tkinter",
+            "Requests"
+        ],
+        "category": "Developer Tools",
+        "author": "Docteur-Parfait",
+        "stars": 12,
+        "language": "Python"
+    }
+]

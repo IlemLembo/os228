@@ -1,36 +1,173 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# OS228 - OpenSource 228
 
-## Getting Started
+![OS228 Logo](https://img.shields.io/badge/OS228-OpenSource%20228-green?style=for-the-badge&logo=github)
+![Hacktoberfest 2025](https://img.shields.io/badge/Hacktoberfest-2025-orange?style=for-the-badge&logo=digitalocean)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)
 
-First, run the development server:
+**OS228** est une plateforme qui regroupe les projets open source du Togo dans le cadre du **Hacktoberfest 2025**. Cette initiative vise à promouvoir l'écosystème technologique togolais et à encourager la contribution aux projets open source.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🌟 À propos
+
+OS228 (OpenSource 228) est une plateforme communautaire qui met en avant les projets open source développés par la communauté tech du Togo. Le "228" fait référence à l'indicatif téléphonique du Togo, symbolisant notre attachement à notre pays.
+
+## 🚀 Fonctionnalités
+
+- 📋 **Liste des projets** : Découvrez tous les projets open source du Togo
+- 🎨 **Interface moderne** : Design responsive avec thème vert sombre (open source)
+- 🔄 **Facilité de contribution** : Ajout simple de nouveaux projets
+- 🌐 **Multilingue** : Interface en français
+- 📱 **Responsive** : Compatible mobile, tablette et desktop
+
+## 🛠️ Technologies utilisées
+
+- **Next.js 15** - Framework React
+- **TypeScript** - Typage statique
+- **Tailwind CSS** - Framework CSS
+- **React 19** - Bibliothèque UI
+
+## 🚀 Installation et démarrage
+
+### Prérequis
+
+- Node.js 18+
+- npm, yarn, pnpm ou bun
+
+### Installation
+
+1. **Cloner le repository**
+
+   ```bash
+   git clone https://github.com/Docteur-Parfait/os228.git
+   cd os228
+   ```
+
+2. **Installer les dépendances**
+
+   ```bash
+   npm install
+   # ou
+   yarn install
+   # ou
+   pnpm install
+   # ou
+   bun install
+   ```
+
+3. **Lancer le serveur de développement**
+
+   ```bash
+   npm run dev
+   # ou
+   yarn dev
+   # ou
+   pnpm dev
+   # ou
+   bun dev
+   ```
+
+4. **Ouvrir dans le navigateur**
+
+   Ouvrez [http://localhost:3000](http://localhost:3000) dans votre navigateur.
+
+## 🤝 Comment contribuer
+
+Nous accueillons toutes les contributions ! Voici comment vous pouvez participer :
+
+### 1. Contribuer au code
+
+1. **Fork** le repository
+2. **Créer une branche** pour votre fonctionnalité
+   ```bash
+   git checkout -b feature/nom-de-votre-fonctionnalite
+   ```
+3. **Faire vos modifications** et les commiter
+   ```bash
+   git commit -m "Ajout: description de votre modification"
+   ```
+4. **Pousser** vers votre fork
+   ```bash
+   git push origin feature/nom-de-votre-fonctionnalite
+   ```
+5. **Créer une Pull Request**
+
+### 2. Ajouter un projet open source
+
+Pour ajouter votre projet à la liste :
+
+1. **Modifier le fichier** `data/projects.json`
+2. **Ajouter votre projet** avec la structure suivante :
+
+```json
+{
+  "id": 4,
+  "name": "Nom de votre projet",
+  "description": "Description détaillée de votre projet",
+  "link": "https://github.com/votre-username/votre-projet",
+  "technologies": ["React", "Node.js", "MongoDB"],
+  "category": "Web Development",
+  "author": "Votre nom d'utilisateur",
+  "stars": 0,
+  "language": "TypeScript"
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. **Créer une Pull Request** avec vos modifications
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+> **Note** : Le fichier `projects.ts` lit automatiquement les données depuis `projects.json`, donc vous n'avez besoin de modifier que le fichier JSON !
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 3. Signaler un bug
 
-## Learn More
+- Utilisez les **Issues** GitHub pour signaler des bugs
+- Décrivez clairement le problème et les étapes pour le reproduire
 
-To learn more about Next.js, take a look at the following resources:
+### 4. Proposer une amélioration
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Créez une **Issue** avec le label "enhancement"
+- Décrivez votre idée d'amélioration
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📋 Structure du projet
 
-## Deploy on Vercel
+```
+os228/
+├── app/                    # Pages Next.js
+│   ├── layout.tsx         # Layout principal
+│   └── page.tsx           # Page d'accueil
+├── components/            # Composants React
+│   ├── Navbar.tsx        # Barre de navigation
+│   └── ProjectCard.tsx   # Carte de projet
+├── data/                 # Données
+│   └── projects.json     # Liste des projets
+├── public/               # Assets statiques
+└── README.md            # Documentation
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🎯 Hacktoberfest 2025
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Ce projet participe au **Hacktoberfest 2025** !
+
+- ✅ **Issues** étiquetées `hacktoberfest` sont prêtes pour les contributions
+- 🏷️ **Labels** : `good first issue`, `help wanted`, `hacktoberfest`
+- 🎁 **Récompenses** : T-shirts et stickers pour les contributeurs
+
+## 📝 Licence
+
+Ce projet est sous licence **MIT**. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
+
+## 👥 Auteurs
+
+- **Docteur-Parfait** - _Créateur initial_ - [@Docteur-Parfait](https://github.com/Docteur-Parfait)
+
+## 🙏 Remerciements
+
+- La communauté tech du Togo
+- Les organisateurs du Hacktoberfest
+- Tous les contributeurs open source
+
+## 📞 Contact
+
+- **GitHub** : [@Docteur-Parfait](https://github.com/Docteur-Parfait)
+- **Repository** : [os228](https://github.com/Docteur-Parfait/os228)
+
+---
+
+**Fait avec ❤️ par la communauté tech du Togo 🇹🇬**
