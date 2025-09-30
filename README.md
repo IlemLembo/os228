@@ -146,7 +146,7 @@ Ce projet participe au **Hacktoberfest 2025** !
 
 - ✅ **Issues** étiquetées `hacktoberfest` sont prêtes pour les contributions
 - 🏷️ **Labels** : `good first issue`, `help wanted`, `hacktoberfest`
-- 🎁 **Récompenses** : T-shirts et stickers pour les contributeurs
+- 🎁 **Récompenses** : Une prière tech
 
 ## 📝 Licence
 
