@@ -122,7 +122,20 @@
         "language": "Python"
     },
     {
-  "id": 10,
+
+        "id": 10,
+        "name": "MailMass",
+        "description": "MassMail is a cross-platform Flutter application that allows you to send emails to multiple recipients with ease. It provides a simple and intuitive interface for composing and sending emails in bulk.",
+        "link": "https://github.com/Donchaminade/MailMass",
+        "technologies": [
+            "Dart, Flutter"
+        ],
+        "category": "Mobile, Saas, OS",
+        "author": "Donchaminade",
+        "language": "Dart"
+    },
+    {
+  "id": 11,
   "name": "TogoGeoAPI",
   "description": "TogoGeoAPI est une api de géolocalisation administrative du togo",
   "link": "https://github.com/DevBignuel/TogoGeoApi_SpringBoot.git",
@@ -131,4 +144,5 @@
   "author": "DevBignuel",
   "language": "Java"
 }
+
 ]
