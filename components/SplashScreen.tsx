@@ -86,7 +86,7 @@ export default function SplashScreen({ onAnimationComplete }: SplashScreenProps)
           initial={{ scale: 0.5, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="text-9xl font-bold text-white" // Larger text and white for 'OS'
+          className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-bold text-white" // Responsive font sizes
         >
           {displayText.slice(0, 2)} {/* 'OS' in white */}
           <span className="text-red-500">{displayText.slice(2, 3)}</span> {/* '2' in red */}
