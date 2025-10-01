@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import { Project } from "../data/projects";
 import { useGitHubStats } from "../hooks/useGitHubStats";
 
@@ -5,8 +8,16 @@ interface ProjectCardProps {
   project: Project;
 }
 
+const MAX_DESCRIPTION_LENGTH = 150;
+
 export default function ProjectCard({ project }: ProjectCardProps) {
   const { stats, loading } = useGitHubStats(project.link);
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const isLongDescription = project.description.length > MAX_DESCRIPTION_LENGTH;
+  const displayedDescription = isExpanded || !isLongDescription
+    ? project.description
+    : `${project.description.slice(0, MAX_DESCRIPTION_LENGTH)}...`;
 
   return (
     <div className="bg-card rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-border">
@@ -47,9 +58,53 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         </div>
       </div>
 
-      <p className="text-muted-foreground mb-4 leading-relaxed">
-        {project.description}
-      </p>
+      <div className="mb-4">
+        <p className="text-muted-foreground leading-relaxed">
+          {displayedDescription}
+        </p>
+        {isLongDescription && (
+          <button
+            onClick={() => setIsExpanded(!isExpanded)}
+            className="text-primary hover:text-primary/80 text-sm font-medium mt-2 transition-colors duration-200 flex items-center gap-1"
+          >
+            {isExpanded ? (
+              <>
+                Voir moins
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 15l7-7 7 7"
+                  />
+                </svg>
+              </>
+            ) : (
+              <>
+                Voir plus
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </>
+            )}
+          </button>
+        )}
+      </div>
 
       <div className="flex flex-wrap gap-2 mb-4">
         {project.technologies.map((tech, index) => (
