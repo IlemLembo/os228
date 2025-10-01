@@ -87,7 +87,7 @@
     {
         "id": 7,
         "name": "Godot Third Person Camera",
-        "description": "Godot Third Person Camera est un module prêt à l’emploi pour intégrer une caméra de vue à la troisième personne dans vos jeux 3D sous Godot 4. Il est hautement configurable, il prend en charge plusieurs vues et s’intègre facilement.",
+        "description": "Godot Third Person Camera est un module prêt à l'emploi pour intégrer une caméra de vue à la troisième personne dans vos jeux 3D sous Godot 4. Il est hautement configurable, il prend en charge plusieurs vues et s’intègre facilement.",
         "link": "https://github.com/JeanKouss/godot-third-person-camera",
         "technologies": [
             "Godot",
@@ -96,5 +96,29 @@
         "category": "Game development",
         "author": "JeanKouss",
         "language": "GDScript"
+    },
+    {
+        "id": 8,
+        "name": "Forklet",
+        "description": "Téléchargez facilement n'importe quel fichier ou dossier depuis un dépôt GitHub, en choisissant la branche, le tag ou le commit, avec un filtrage avancé grâce aux motifs glob. Cette solution permet de récupérer des dépôts entiers ou seulement certains fichiers/dossiers, prend en charge les téléchargements concurrents pour de meilleures performances, inclut des mécanismes intelligents de retry et de limitation de débit, propose à la fois une interface CLI et une API Python, gère les erreurs et la journalisation de manière complète, et offre un support du cache pour les téléchargements répétés.",
+        "link": "https://github.com/AllDotPy/Forklet",
+        "technologies": [
+            "Python"
+        ],
+        "category": "SDK, CLI utilitys & Libraries",
+        "author": "AllDotPy",
+        "language": "Python"
+    },
+    {
+        "id": 9,
+        "name": "Valkyrie",
+        "description": "Valkyrie est un scanner de sécurité open-source, robuste et fortement typé, qui s'intègre directement dans vos pipelines CI/CD (GitHub Actions, GitLab CI, etc.). Comme les Valkyries mythiques qui choisissaient quels guerriers étaient dignes du Valhalla, cet outil inspecte minutieusement chaque Pull Request, ne laissant passer que le code sécurisé. Il détecte et bloque les menaces dès le départ, notamment les secrets et mots de passe (clés API, tokens, identifiants), les dépendances vulnérables (SBOM) et les configurations IAM à risque (politiques trop permissives sur AWS, GCP ou Azure).",
+        "link": "https://github.com/AllDotPy/Valkyrie",
+        "technologies": [
+            "Python"
+        ],
+        "category": "DevSecOps, CI/CD, Security Scanner",
+        "author": "AllDotPy",
+        "language": "Python"
     }
 ]
