@@ -1,47 +1,72 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState, useEffect, useMemo } from "react";
 import Navbar from "../components/Navbar";
-import ProjectCard from "../components/ProjectCard";
 import ProjectFilters from "../components/ProjectFilters";
-import { projectsData } from "../data/projects";
+import Pagination from "../components/Pagination";
+import AnimatedProjectList from "../components/AnimatedProjectList";
+import ProjectCardSkeleton from "../components/ProjectCardSkeleton"; // New import
+import { projectsData, getPaginatedProjects } from "../data/projects";
 
 export default function Home() {
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState<string>("");
   const [sortBy, setSortBy] = useState<"name" | "stars" | "id">("id");
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [loading, setLoading] = useState(true); // New loading state
+  const itemsPerPage = 6; // Number of projects per page
 
-  // Filtrer et trier les projets
-  const filteredAndSortedProjects = useMemo(() => {
-    let filtered = projectsData;
+  // Simulate data fetching delay
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1500); // 1.5 seconds delay
+    return () => clearTimeout(timer);
+  }, []);
 
-    // Filtrage par nom
-    if (searchQuery) {
-      filtered = projectsData.filter(
-        (project) =>
-          project.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          project.description
-            .toLowerCase()
-            .includes(searchQuery.toLowerCase()) ||
-          project.technologies.some((tech) =>
-            tech.toLowerCase().includes(searchQuery.toLowerCase())
-          )
-      );
+  const sortedProjects = useMemo(() => {
+    const sorted = [...projectsData];
+    switch (sortBy) {
+      case "name":
+        sorted.sort((a, b) => a.name.localeCompare(b.name, "fr"));
+        break;
+      case "id":
+      default:
+        sorted.sort((a, b) => b.id - a.id);
+        break;
     }
+    return sorted;
+  }, [sortBy]);
 
-    // Tri
-    return filtered.sort((a, b) => {
-      switch (sortBy) {
-        case "name":
-          return a.name.localeCompare(b.name, "fr");
-        case "stars":
-          // Tri par popularité (ID décroissant comme proxy)
-          return b.id - a.id;
-        case "id":
-        default:
-          return b.id - a.id;
-      }
-    });
-  }, [searchQuery, sortBy]);
+  const filteredProjects = useMemo(() => {
+    return sortedProjects.filter((project) =>
+      project.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      project.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      project.technologies.some((tech) =>
+        tech.toLowerCase().includes(searchQuery.toLowerCase())
+      )
+    );
+  }, [sortedProjects, searchQuery]);
+
+  const { paginatedProjects, totalProjects } = useMemo(() => {
+    return getPaginatedProjects(currentPage, itemsPerPage, filteredProjects);
+  }, [currentPage, itemsPerPage, filteredProjects]);
+
+  const totalPages = Math.ceil(totalProjects / itemsPerPage);
+
+  const handleSearch = (query: string) => {
+    setSearchQuery(query);
+    setCurrentPage(1); // Reset to first page on new search
+  };
+
+  const handleSort = (sortOption: "name" | "stars" | "id") => {
+    setSortBy(sortOption);
+    setCurrentPage(1); // Reset to first page on new sort
+  };
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -67,39 +92,33 @@ export default function Home() {
         <section className="mb-16">
           {/* Filtres et recherche */}
           <ProjectFilters
-            onSearch={setSearchQuery}
-            onSort={setSortBy}
+            onSearch={handleSearch}
+            onSort={handleSort}
             searchQuery={searchQuery}
             sortBy={sortBy}
           />
 
           {/* Liste des projets */}
-          {filteredAndSortedProjects.length > 0 ? (
+          {loading ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredAndSortedProjects.map((project) => (
-                <ProjectCard key={project.id} project={project} />
+              {[...Array(itemsPerPage)].map((_, index) => (
+                <ProjectCardSkeleton key={index} />
               ))}
             </div>
           ) : (
-            <div className="text-center py-12">
-              <div className="text-6xl mb-4">🔍</div>
-              <h3 className="text-xl font-semibold text-foreground mb-2">
-                Aucun projet trouvé
-              </h3>
-              <p className="text-muted-foreground">
-                {searchQuery
-                  ? `Aucun projet ne correspond à "${searchQuery}"`
-                  : "Aucun projet disponible pour le moment"}
-              </p>
-              {searchQuery && (
-                <button
-                  onClick={() => setSearchQuery("")}
-                  className="mt-4 text-primary hover:text-primary/80 font-medium transition-colors"
-                >
-                  Effacer la recherche
-                </button>
-              )}
-            </div>
+            <AnimatedProjectList
+              paginatedProjects={paginatedProjects}
+              searchQuery={searchQuery}
+              setSearchQuery={setSearchQuery}
+            />
+          )}
+
+          {totalPages > 1 && !loading && (
+            <Pagination
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onPageChange={handlePageChange}
+            />
           )}
         </section>
 

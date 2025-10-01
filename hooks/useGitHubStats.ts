@@ -10,6 +10,12 @@ export function useGitHubStats(projectLink: string) {
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
+        if (typeof window === 'undefined') {
+            // Don't fetch on the server side
+            setLoading(false);
+            return;
+        }
+
         const fetchStats = async () => {
             try {
                 setLoading(true);
@@ -43,7 +49,7 @@ export function useGitHubStats(projectLink: string) {
                 }
             } catch (err) {
                 setError('Erreur lors de la récupération des statistiques');
-                console.error('Erreur useGitHubStats:', err);
+                console.error(`Erreur useGitHubStats pour ${projectLink}:`, err);
             } finally {
                 setLoading(false);
             }
