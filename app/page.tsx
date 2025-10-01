@@ -1,17 +1,27 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useEffect, useMemo } from "react";
 import Navbar from "../components/Navbar";
 import ProjectFilters from "../components/ProjectFilters";
 import Pagination from "../components/Pagination";
-import AnimatedProjectList from "../components/AnimatedProjectList"; // New import
+import AnimatedProjectList from "../components/AnimatedProjectList";
+import ProjectCardSkeleton from "../components/ProjectCardSkeleton"; // New import
 import { projectsData, getPaginatedProjects } from "../data/projects";
 
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [sortBy, setSortBy] = useState<"name" | "stars" | "id">("id");
   const [currentPage, setCurrentPage] = useState<number>(1);
+  const [loading, setLoading] = useState(true); // New loading state
   const itemsPerPage = 6; // Number of projects per page
+
+  // Simulate data fetching delay
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1500); // 1.5 seconds delay
+    return () => clearTimeout(timer);
+  }, []);
 
   const sortedProjects = useMemo(() => {
     const sorted = [...projectsData];
@@ -89,13 +99,21 @@ export default function Home() {
           />
 
           {/* Liste des projets */}
-          <AnimatedProjectList
-            paginatedProjects={paginatedProjects}
-            searchQuery={searchQuery}
-            setSearchQuery={setSearchQuery}
-          />
+          {loading ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[...Array(itemsPerPage)].map((_, index) => (
+                <ProjectCardSkeleton key={index} />
+              ))}
+            </div>
+          ) : (
+            <AnimatedProjectList
+              paginatedProjects={paginatedProjects}
+              searchQuery={searchQuery}
+              setSearchQuery={setSearchQuery}
+            />
+          )}
 
-          {totalPages > 1 && (
+          {totalPages > 1 && !loading && (
             <Pagination
               currentPage={currentPage}
               totalPages={totalPages}
