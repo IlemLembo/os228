@@ -70,5 +70,18 @@
         "category": "Web Development",
         "author": "Wilfried GOEH",
         "language": "Python"
+    },
+    {
+        "id": 6,
+        "name": "FletX",
+        "description": "FletX est le framework Python Open Source inspiré de GetX pour la création d'applications réactives et multiplateformes avec Flet. Il apporte les modèles GetX bien-aimés de Flutter à Python, en combinant les capacités d'interface utilisateur de Flet avec la gestion de l'état, le routage déclaratif, linjection de dépendances, une architecture modulaire et une bibliothèque de widgets.",
+        "link": "https://github.com/AllDotPy/FletX",
+        "technologies": [
+            "Python",
+            "Smarty"
+        ],
+        "category": "Cross-Platform Development",
+        "author": "Wilfried GOEH",
+        "language": "Python"
     }
 ]
