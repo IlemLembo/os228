@@ -28,7 +28,7 @@ export async function getGitHubStats(owner: string, repo: string): Promise<GitHu
         });
 
         if (!response.ok) {
-            console.warn(`Impossible de récupérer les stats pour ${owner}/${repo}: ${response.status}`);
+            console.warn(`Impossible de récupérer les stats pour ${owner}/${repo}: ${response.status} - ${response.statusText}`);
             return null;
         }
 
