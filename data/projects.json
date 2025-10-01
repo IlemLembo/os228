@@ -41,17 +41,47 @@
         "author": "Docteur-Parfait",
         "language": "Python"
     },
-
     {
-      "id": 4,
-      "name": "SpendLee",
-      "description": "SpendLee est une application web qui permet de calculer rapidement le total d’un devis, d’un bon de commande ou de simples dépenses. Elle peut extraire automatiquement les montants depuis une image grâce à l’OCR intégré, faire des conversions entre XOF, EUR et USD, afficher les résultats en chiffres et en lettres, et exporter les résultats en PDF ou .txt pour archivage ou partage. SpendLee simplifie la vie dans toutes les situations où vous devez faire des additions ou vérifications de montants, même depuis votre mobile.",
-      "link": "https://github.com/SergeAzontondji/SpendLee",
-      "technologies": ["HTML", "CSS", "JavaScript", "Bootstrap", "Tesseract.js", "jsPDF"],
-      "category": "Web Development",
-      "author": "Serge Azontondji",
-      "stars": 8,
-      "language": "JavaScript"
+        "id": 4,
+        "name": "SpendLee",
+        "description": "SpendLee est une application web qui permet de calculer rapidement le total d'un devis, d'un bon de commande ou de simples dépenses. Elle peut extraire automatiquement les montants depuis une image grâce à l'OCR intégré, faire des conversions entre XOF, EUR et USD, afficher les résultats en chiffres et en lettres, et exporter les résultats en PDF ou .txt pour archivage ou partage. SpendLee simplifie la vie dans toutes les situations où vous devez faire des additions ou vérifications de montants, même depuis votre mobile.",
+        "link": "https://github.com/SergeAzontondji/SpendLee",
+        "technologies": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Bootstrap",
+            "Tesseract.js",
+            "jsPDF"
+        ],
+        "category": "SDK & Libraries",
+        "author": "Serge Azontondji",
+        "stars": 8,
+        "language": "JavaScript"
+    },
+    {
+        "id": 5,
+        "name": "EasySwitch",
+        "description": "EasySwitch est un SDK Python unifié pour l'intégration des mobiles money auprès des principaux agrégateurs d'Afrique de l'Ouest. Il offre une interface unique et cohérente pour simplifier le traitement des paiements, réduire la duplication de code et accélérer le développement.",
+        "link": "https://github.com/AllDotPy/EasySwitch",
+        "technologies": [
+            "Python"
+        ],
+        "category": "Web Development",
+        "author": "Wilfried GOEH",
+        "language": "Python"
+    },
+    {
+        "id": 6,
+        "name": "FletX",
+        "description": "FletX est le framework Python Open Source inspiré de GetX pour la création d'applications réactives et multiplateformes avec Flet. Il apporte les modèles GetX bien-aimés de Flutter à Python, en combinant les capacités d'interface utilisateur de Flet avec la gestion de l'état, le routage déclaratif, linjection de dépendances, une architecture modulaire et une bibliothèque de widgets.",
+        "link": "https://github.com/AllDotPy/FletX",
+        "technologies": [
+            "Python",
+            "Smarty"
+        ],
+        "category": "Cross-Platform Development",
+        "author": "Wilfried GOEH",
+        "language": "Python"
     }
-
 ]
