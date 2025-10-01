@@ -83,5 +83,18 @@
         "category": "Cross-Platform Development",
         "author": "AllDotPy",
         "language": "Python"
+    },
+    {
+        "id": 7,
+        "name": "Godot Third Person Camera",
+        "description": "Godot Third Person Camera est un module prêt à l’emploi pour intégrer une caméra de vue à la troisième personne dans vos jeux 3D sous Godot 4. Il est hautement configurable, il prend en charge plusieurs vues et s’intègre facilement.",
+        "link": "https://github.com/JeanKouss/godot-third-person-camera",
+        "technologies": [
+            "Godot",
+            "GDScript"
+        ],
+        "category": "Game development",
+        "author": "JeanKouss",
+        "language": "GDScript"
     }
 ]
