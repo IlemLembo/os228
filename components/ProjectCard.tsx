@@ -21,11 +21,11 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
   return (
     <div className="bg-card rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-border">
-      <div className="flex items-center  justify-between  mb-4">
-        <h3 className="text-xl font-bold line-clamp-1 text-card-foreground">
+      <div className="flex items-start  justify-between  mb-4">
+        <h3 className="text-xl font-bold leading-6 text-card-foreground">
           {project.name}
         </h3>
-        <div className="flex  align-middle gap-3 text-muted-foreground text-sm">
+        <div className="flex h-6 bg-red-500 items-center gap-3 text-muted-foreground text-sm">
           {loading ? (
             <div className="flex items-center gap-2">
               <div className="w-4 h-4 border-2 border-primary border-t-transparent rounded-full animate-spin"></div>
