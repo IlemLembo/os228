@@ -143,9 +143,6 @@
         "author": "LEMBO Ilem Nelson",
         "language": "Python"
     },
-
-
-  },
   {
       "id": 12,
       "name": "AlgoNumeriquesCodes",
@@ -157,8 +154,9 @@
       "category": "Mathematics, Mathematical programming",
       "author": "arielDirema",
       "language": "Python"
+
   },
-   {
+ {
         "id": 13,
         "name": "MailMass",
         "description": "MassMail is a cross-platform Flutter application that allows you to send emails to multiple recipients with ease. It provides a simple and intuitive interface for composing and sending emails in bulk.",
