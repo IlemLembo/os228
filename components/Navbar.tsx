@@ -16,7 +16,7 @@ export default function Navbar() {
             alt="Drapeau du Togo"
             width={24}
             height={24}
-            className="h-6 mr-2"
+            className=" object-contain w-7 mr-2"
           />
           <h1 className="text-xl font-bold text-foreground">OS228</h1>
         </div>
